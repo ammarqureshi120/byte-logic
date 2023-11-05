@@ -1,0 +1,16 @@
+@import "./mixin.scss";
+@import "./partials.scss";
+
+.heading {
+  padding: 3rem 0px;
+  text-align: center;
+  font-size: 2.4rem;
+  font-family: $font-goodtimes;
+  letter-spacing: 0.3px;
+  span {
+    color: $red;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,122 @@
+@mixin allCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin horizontalcenter {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin verticallycenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin horizontallysapce {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin maxWidth {
+  max-width: 1280px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 600px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@mixin button($padding, $border-radius) {
+  padding: $padding;
+  border-radius: $border-radius;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  background-color: $primary-color;
+  font-family: $font-Montserrat;
+  font-weight: 500;
+  color: $white;
+  cursor: pointer;
+  transition: 0.1s;
+  display: inline-block;
+  overflow: hidden;
+}
+
+@mixin button_animate($padding, $border-radius, $border) {
+  position: relative;
+  display: inline-block;
+  padding: $padding;
+  border-radius: $border-radius;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  background-color: $white;
+
+  color: $black;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  &:hover {
+    transform: scale(0.9);
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: $border;
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius;
+    transition: all 0.2s ease;
+  }
+  &:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    padding: 0.3rem;
+  }
+}
+@mixin input($padding) {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border: 0.5px solid #555;
+  padding: $padding;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  font-family: Acumin-Pro-Book;
+
+  &::placeholder {
+    font-family: Acumin-Pro-Book;
+  }
+}
+
+@mixin closeBtn($width, $height, $padding, $border-radius) {
+  width: $width;
+  height: $height;
+  background-color: $white;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.125);
+  @include allCenter;
+  padding: 5px;
+  border-radius: $border-radius;
+  cursor: pointer;
+  z-index: 50;
+  transition: 0.3s ease;
+
+  svg {
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+    color: $primary-color;
+  }
+
+  &:hover svg {
+    transform: rotate(360deg);
+    transition: transform 0.3s ease;
+    color: $red;
+  }
+}

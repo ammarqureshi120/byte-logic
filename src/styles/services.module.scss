@@ -1,0 +1,87 @@
+@import "./mixin.scss";
+@import "./partials.scss";
+
+.Services {
+  width: 100%;
+  background-color: $background;
+  padding-bottom: 60px;
+  .Services_wrapper {
+    @include maxWidth;
+    .Services_boxs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      .Services_box {
+        position: relative;
+        width: calc(33% - 40px);
+        padding: 30px;
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.1);
+        background-color: $white;
+        border-radius: 30px;
+        @include allCenter;
+        text-align: center;
+        flex-direction: column;
+
+        .dots {
+          position: absolute;
+          height: 50px;
+          left: 30px;
+          top: 30px;
+        }
+
+        .card_logo {
+          position: relative;
+          background-color: $extra-light-gray;
+          border-radius: 100%;
+          width: 100px;
+          height: 100px;
+          @include allCenter;
+          margin-bottom: 0.8rem;
+          img {
+            width: 50px;
+            height: 50px;
+          }
+        }
+        h3 {
+          font-size: 1.2rem;
+          font-weight: 400;
+          margin-bottom: 10px;
+          font-family: $font-goodtimes;
+        }
+        p {
+          font-size: 0.85rem;
+          color: $light-gray;
+          font-family: $font-Raleway;
+          font-weight: 500;
+        }
+
+        @media screen and (max-width: 1000px) {
+          width: calc(50% - 40px);
+        }
+
+        @media screen and (max-width: 600px) {
+          width: 100%;
+          .dots {
+            height: 40px;
+          }
+          .card_logo {
+            width: 80px;
+            height: 80px;
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+          h3 {
+            font-size: 1rem;
+          }
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}

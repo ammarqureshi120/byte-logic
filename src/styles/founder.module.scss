@@ -1,0 +1,97 @@
+@import "./mixin.scss";
+@import "./partials.scss";
+
+.founder {
+  width: 100%;
+  background-image: url(../assets/Images/our-founder-bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 100% 100%;
+  padding: 120px 0px;
+
+  .founder_wrapper {
+    @include maxWidth;
+    gap: 60px;
+    display: flex;
+
+    .founder_left {
+      flex: 1.1;
+
+      img {
+        width: 550px;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .founder_right {
+      flex: 1;
+      padding-top: 30px;
+
+      h1 {
+        font-size: 2rem;
+        font-family: $font-goodtimes;
+        font-weight: 500;
+        margin-bottom: 1.2rem;
+        span {
+          color: $red;
+        }
+      }
+      p {
+        font-family: $font-Raleway;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+      }
+
+      h5 {
+        font-family: $font-Raleway;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        width: 70%;
+        font-size: 1.1rem;
+      }
+
+      button {
+        @include button(10px 16px, 6px);
+        font-weight: 600;
+        box-shadow: 0px 0px 10px 1px rgba(255, 0, 0, 0.2);
+        font-size: 0.8rem;
+      }
+    }
+    @media screen and (max-width: 1050px) {
+      .founder_left {
+        img {
+          width: 450px;
+        }
+      }
+    }
+    @media screen and (max-width: 900px) {
+      padding-top: 200px;
+      flex-direction: column;
+      .founder_left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .founder_left {
+        img {
+          width: 100%;
+        }
+      }
+
+      .founder_right {
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+        h5 {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

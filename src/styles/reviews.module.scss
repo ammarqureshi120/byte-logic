@@ -1,0 +1,90 @@
+@import "./mixin.scss";
+@import "./partials.scss";
+
+.reviews {
+  width: 100%;
+  margin-bottom: 100px;
+  .reviews_wrapper {
+    position: relative;
+    @include maxWidth;
+    .review_cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: $font-Raleway;
+      margin-top: 30px;
+      .review_logo {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      h5 {
+        font-family: $font-Raleway;
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+      }
+      h4 {
+        font-weight: 500;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      p {
+        margin-bottom: 2rem;
+        font-weight: 500;
+        text-align: center;
+      }
+      .stars {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        color: gold;
+      }
+    }
+
+    .swiper_action {
+      div {
+        position: absolute;
+        border: 1px solid #ffffff;
+        @include allCenter;
+        padding: 6px;
+        border-radius: 8px;
+        top: 43%;
+        cursor: pointer;
+        transition: 0.1s;
+        z-index: 10;
+        svg {
+          font-size: 1.8rem;
+          color: $gray;
+        }
+        &:hover {
+          background-color: $primary-color;
+          svg {
+            color: $white;
+          }
+        }
+      }
+      div:nth-child(1) {
+        left: 20px;
+      }
+      div:nth-child(2) {
+        right: 20px;
+      }
+      @media screen and (max-width: 1150px) {
+        div:nth-child(1) {
+          left: 3px;
+        }
+        div:nth-child(2) {
+          right: 3px;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+  }
+}
